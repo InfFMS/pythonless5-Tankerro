@@ -4,3 +4,19 @@
 # Пример: ввод N = 6
 # [1,2,3,4,5,6]
 # Вывод: [3,2,1,6,5,4]
+
+from random import randint
+S = []
+N = int(input())
+if N % 2 == 0:
+    S = [0]*N
+    for i in range(0, N):
+        S[i] = randint(0, 10)
+else: print("нечетное")
+
+print(S)
+
+S1 = S[0:(len(S)//2)]
+S2 = S[len(S)//2:len(S)]
+
+print(S1[::-1]+S2[::-1])

@@ -6,3 +6,30 @@
 # 4.YES, если список содержит трехзначное число, состоящее из одинаковых цифр
 # NO в противном случае;
 # 5.список с удаленными первым и последним элементами.
+from random import randint
+S = []
+N = int(input())
+S = [0]*N
+for i in range(0, N):
+    S[i] = randint(0, 100)
+print(f"Массив: {S}")
+#1
+print(N)
+
+#2
+print(S[-1])
+
+#3
+print(S[::-1])
+
+#4
+if (111 in S or 222 in S or 333 in S or 444 in S or 555 in S or 666 in S or
+        777 in S or 888 in S or 999 in S):
+    print("YES")
+else:
+    print("NO")
+
+#5
+del S[0]
+del S[len(S)-1]
+print(S)

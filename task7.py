@@ -4,3 +4,22 @@
 # Пример: ввод N = 6
 # [20, -90, 15, -34, 10, 0]
 # Вывод: [20, 15, 10, -90, -34, 0]
+
+from random import randint
+S = []
+N = int(input())
+S = [0]*N
+for i in range(0, N):
+    S[i] = randint(-100, 100)
+
+print(S)
+
+pos = []
+neg = []
+
+for i in range(0, len(S)):
+    if S[i] > 0:
+        pos.append(S[i])
+    if S[i] <= 0:
+        neg.append(S[i])
+print(pos+neg)
