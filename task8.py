@@ -6,20 +6,26 @@
 # Вывод: [77, 5555]
 
 from random import randint
+
+Correct_numbers = [11, 111, 1111, 11_111]
+for i in range(4, 37):
+    Correct_numbers.append(Correct_numbers[i%4]*((i//4)+1))
+
+#print(Correct_numbers)
+
 S = []
 N = int(input())
 S = [0]*N
 for i in range(0, N):
     S[i] = randint(10, 100_000)
 
-print(f"Массив: {S}")
-i=0
-ans = []
-for i in range(0, len(S)):
-    j = 0
-    while j < len(str(S[i]))-1 and str(S[i])[j] == str(S[i])[j+1]:
-        if j == len(str(S[i]))-2:
+#print(f"Массив: {S}")
+def Find_correct_num(S):
+    ans = []
+    for i in range(0, len(S)):
+        if S[i] in Correct_numbers:
             ans.append(S[i])
-        j+=1
-print(ans)
+    return ans
+
+print(Find_correct_num(S))
 
