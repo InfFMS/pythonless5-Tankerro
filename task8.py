@@ -8,10 +8,10 @@
 from random import randint
 
 Correct_numbers = [11, 111, 1111, 11_111]
-for i in range(4, 37):
+for i in range(4, 36):
     Correct_numbers.append(Correct_numbers[i%4]*((i//4)+1))
 
-#print(Correct_numbers)
+print(Correct_numbers)
 
 S = []
 N = int(input())
